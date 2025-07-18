@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\abcd3\\desktop\\unreal learn\\sparta\\c++_unrealengine_3d\\spartaproject\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_gen_cpp\\src\\rdtextbuffer.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\abcd3\\desktop\\unreal learn\\sparta\\c++_unrealengine_3d\\spartaproject\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\rd\\definitions.h",
+            "c:\\users\\abcd3\\desktop\\unreal learn\\sparta\\c++_unrealengine_3d\\spartaproject\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_gen_cpp\\src\\rdtextbuffer.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
