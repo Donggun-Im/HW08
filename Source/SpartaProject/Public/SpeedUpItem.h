@@ -14,6 +14,9 @@ class SPARTAPROJECT_API ASpeedUpItem : public ABaseItem
 {
 	GENERATED_BODY()
 	void BeginPlay() override;
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	float ItemSpeedMultiplier;
 	
 	ASpeedUpItem();
 	UFUNCTION()
@@ -22,5 +25,6 @@ class SPARTAPROJECT_API ASpeedUpItem : public ABaseItem
 	void SpeedUp();
 	UFUNCTION()
 	void SpeedDown();
-	FTimerHandle TimerHandle;
+	FTimerHandle SpeedUpItemTimerHandle;
+	FTimerHandle ActiveItemTimerHandle;
 };

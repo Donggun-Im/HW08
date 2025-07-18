@@ -11,7 +11,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Components/TextBlock.h"
 // Sets default values
-ASpartaCharacter::ASpartaCharacter()
+ASpartaCharacter::ASpartaCharacter() : SpeedMultiplier(1.0f),SprintSpeedMultiplier(0.7f), IsSprinting(false)
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
@@ -26,8 +26,6 @@ ASpartaCharacter::ASpartaCharacter()
 	CameraComp->bUsePawnControlRotation = false;
 
 	NormalSpeed = 600.0f;
-	SprintSpeedMultiplier = 1.7f;
-	SprintSpeed = NormalSpeed * SprintSpeedMultiplier;
 
 	GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;
 
@@ -158,18 +156,26 @@ void ASpartaCharacter::StopJump(const FInputActionValue& value)
 
 void ASpartaCharacter::StartSprint(const FInputActionValue& value)
 {
+	if (IsSprinting) return;
+	SpeedMultiplier += SprintSpeedMultiplier;
 	if (GetCharacterMovement())
 	{
-		GetCharacterMovement()->MaxWalkSpeed = SprintSpeed;
+		GetCharacterMovement()->MaxWalkSpeed = NormalSpeed * SpeedMultiplier;
+		UE_LOG(LogTemp, Warning, TEXT("Sprint Speed %f"), GetCharacterMovement()->MaxWalkSpeed);
 	}
+	IsSprinting = true;
 }
 
 void ASpartaCharacter::StopSprint(const FInputActionValue& value)
 {
+	if (!IsSprinting) return;
+	SpeedMultiplier -= SprintSpeedMultiplier;
 	if (GetCharacterMovement())
 	{
-		GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;
+		UE_LOG(LogTemp, Warning, TEXT("Sprint Speed %f"), GetCharacterMovement()->MaxWalkSpeed);
+		GetCharacterMovement()->MaxWalkSpeed = NormalSpeed * SpeedMultiplier;
 	}
+	IsSprinting = false;
 }
 
 void ASpartaCharacter::UpdateOverheadHP()

@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-RiderGameControl.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\abcd3\Desktop\Unreal Learn\Sparta\C++_UnrealEngine_3D\SpartaProject\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Module.RiderGameControl.cpp.obj"
+"C:\Users\abcd3\Desktop\Unreal Learn\Sparta\C++_UnrealEngine_3D\SpartaProject\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\RiderGameControl.cpp.obj"
+"C:\Users\abcd3\Desktop\Unreal Learn\Sparta\C++_UnrealEngine_3D\SpartaProject\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Default.rc2.res"
+/OUT:"C:\Users\abcd3\Desktop\Unreal Learn\Sparta\C++_UnrealEngine_3D\SpartaProject\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\UnrealEditor-RiderGameControl.lib"

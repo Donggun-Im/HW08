@@ -59,10 +59,17 @@ protected:
 	void StopSprint(const FInputActionValue& value);
 	UFUNCTION()
 	void UpdateOverheadHP();
+	
 private:
-	float NormalSpeed;
+	
 	float SprintSpeedMultiplier;
-	float SprintSpeed;
+	bool IsSprinting;
+	
 
 	void OnDeath();
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sprint")
+	float SpeedMultiplier;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Sprint")
+	float NormalSpeed;
 };
